@@ -16,8 +16,11 @@ type WindowQuery struct {
 }
 
 type SpaceQuery struct {
-	ID    int `json:"id"`
-	Index int `json:"index"`
+	ID         int  `json:"id"`
+	Index      int  `json:"index"`
+	Fullscreen bool `json:"is-native-fullscreen"`
+	Focus      bool `json:"has-focus"`
+	Display    int  `json:"display"`
 }
 
 type CommandInput struct {

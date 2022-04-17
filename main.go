@@ -31,6 +31,26 @@ func main() {
 					return nil
 				},
 			},
+			{
+				Name:        "space",
+				Description: "Handling spaces",
+				Subcommands: []*cli.Command{
+					{
+						Name:  "next",
+						Usage: "Move current app to next avalibale window",
+						Action: func(c *cli.Context) error {
+							return HandleRight()
+						},
+					},
+					{
+						Name:  "previous",
+						Usage: "Move current app to previous avalibale window",
+						Action: func(c *cli.Context) error {
+							return HandleLeft()
+						},
+					},
+				},
+			},
 		},
 	}
 
