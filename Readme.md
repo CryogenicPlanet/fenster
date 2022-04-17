@@ -25,3 +25,8 @@ fenster start
 
 ## Run server on startup
 
+```
+crontab -e
+
+@reboot fenster start
+```
