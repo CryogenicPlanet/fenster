@@ -13,8 +13,6 @@ https://user-images.githubusercontent.com/10355479/163709379-b5c99dca-0123-41f3-
 
 ## Usage
 
-
-
 Setup callback
 ```bash
 yabai -m signal --add event=space_changed action="curl localhost:8090/prepare?oldSpace=\${YABAI_RECENT_SPACE_ID}&newSpace=\${YABAI_SPACE_ID}"
@@ -35,3 +33,9 @@ crontab -e
 
 @reboot fenster start
 ```
+
+## Disclaimer
+
+This is really just written for me, so it may not make a lot of sense for you to use it. 
+
+Also the code here was written in like an hour and is really quite shit so don't judge me too much on it
