@@ -7,8 +7,10 @@ https://user-images.githubusercontent.com/10355479/163709379-b5c99dca-0123-41f3-
 
 
 
-## Deps
-- [yabai](https://github.com/koekeishiya/yabai) - You need `yabai` to move spaces around which is critical for how Fenster works, in the future this might be something directly implemented
+## Install
+
+
+[yabai](https://github.com/koekeishiya/yabai) - You need `yabai` to move spaces around which is critical for how Fenster works, in the future this might be something directly implemented
     For `yabai` to work with this feature, you need to [Disable System Integrity Protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
 Also need to setup https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition correctly
@@ -22,6 +24,12 @@ yabai -m signal --add event=mission_control_exit action="curl localhost:8090/mis
 
 sudo yabai --load-sa
 ```
+
+### Installing fenster itself
+
+Go to https://github.com/CryogenicPlanet/fenster/releases and download the `fenster` binary for your platform
+
+Make sure it is in `/usr/local/bin` or somewhere in your path
 
 
 ## Usage
