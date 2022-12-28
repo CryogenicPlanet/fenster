@@ -11,11 +11,26 @@ https://user-images.githubusercontent.com/10355479/163709379-b5c99dca-0123-41f3-
 - [yabai](https://github.com/koekeishiya/yabai) - You need `yabai` to move spaces around which is critical for how Fenster works, in the future this might be something directly implemented
     For `yabai` to work with this feature, you need to [Disable System Integrity Protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
+Also need to setup https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition correctly
+
+
+```bash
+// ~/.yabairc
+yabai -m signal --add event=space_changed action="curl localhost:8090/prepare?oldSpace=\${YABAI_RECENT_SPACE_ID}&newSpace=\${YABAI_SPACE_ID}"
+yabai -m signal --add event=mission_control_enter action="curl localhost:8090/mission/enter"
+yabai -m signal --add event=mission_control_exit action="curl localhost:8090/mission/exit"
+
+sudo yabai --load-sa
+```
+
+
 ## Usage
 
 Setup callback
 ```bash
 yabai -m signal --add event=space_changed action="curl localhost:8090/prepare?oldSpace=\${YABAI_RECENT_SPACE_ID}&newSpace=\${YABAI_SPACE_ID}"
+yabai -m signal --add event=mission_control_enter action="curl localhost:8090/mission/enter"
+yabai -m signal --add event=mission_control_exit action="curl localhost:8090/mission/exit"
 
 # In the future will be
 # fenster setup # not implement yet

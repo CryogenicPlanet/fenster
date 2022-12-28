@@ -101,9 +101,9 @@ func checkWindowQueryFullscreen(windowQuery []WindowQuery) bool {
 }
 
 func handleSpaceChange(w http.ResponseWriter, req *http.Request) {
-	// fmt.Println("Handle Space Change")
 
 	fmt.Println("-------")
+	fmt.Println("Handle Space Change")
 
 	missionControlLock, _ := lock.Load(missionControl)
 
@@ -197,7 +197,7 @@ func handleSpaceChange(w http.ResponseWriter, req *http.Request) {
 		currentWindowIsFullscreen := checkWindowQueryFullscreen(windowQuery)
 		oldWindowIsNotFullscreen := checkWindowQueryFullscreen(oldSpaceWindowQuery)
 
-		fmt.Println(currentWindowIsFullscreen, oldWindowIsNotFullscreen, oldSpaceWindowQuery, spaceIndex)
+		fmt.Println("currentWindow isFullscreen:", currentWindowIsFullscreen, ",oldWindow isNotFS:", oldWindowIsNotFullscreen, "oldSpace WindowQuery: ", oldSpaceWindowQuery, "spaceIndex: ", spaceIndex)
 
 		if currentWindowIsFullscreen && !oldWindowIsNotFullscreen {
 			cmd := fmt.Sprintf("yabai -m space --move %v", (spaceIndex + 1))
